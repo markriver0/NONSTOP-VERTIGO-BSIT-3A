@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: var(--ff--primary);
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+:root {
+  --color--primary--100: #fafafa;
+  --color--primary--200: rgb(255, 216, 77);
+  --color--primary--300: rgba(251, 105, 27);
+  --color--primary--400: rgb(2, 87, 184);
+  --color--primary--500: #252525;
+
+  --ff--primary: "Poppins", sans-serif;
+  --ff--futura: 'Futura Std', sans-serif;                                                                    
+  --ff--secondary: ;
+
+  --fz--header: 5rem;
+}
+
+
+.site-footer {
+  background-color: var(--color--primary--500);
+  color: var(--color--primary--100);
+  padding: 3rem 1rem 1rem;
+  font-family: var(--ff--primary);
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+
+  h1{
+font-size: 4rem;
+  margin-bottom: 1.5rem;
+  color: var(--color--primary--400);
+  font-weight: 600;
+  }
+}
+
+.footer-section h2,
+.footer-section h3 {
+  margin-bottom: 1rem;
+  color: var(--color--primary--100);
+  font-family: var(--ff--futura);
+}
+
+.footer-section p,
+.footer-section ul {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  font-size: 1.2rem;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+  color: var(--color--primary--200);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: var(--color--primary--100);
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  border-top: 1px solid var(--color--primary--300);
+  padding-top: 1rem;
+  font-size: 0.875rem;
+  color: var(--color--primary--200);
+}

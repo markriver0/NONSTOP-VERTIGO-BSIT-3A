@@ -1,0 +1,224 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: var(--ff--primary);
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+:root {
+  --color--primary--100: #fafafa;
+  --color--primary--200: rgb(255, 216, 77);
+  --color--primary--300: rgba(251, 105, 27);
+  --color--primary--400: rgb(2, 87, 184);
+  --color--primary--500: #252525;
+
+  --ff--primary: "Poppins", sans-serif;
+  --ff--futura: 'Futura Std', sans-serif;                                                                    
+
+  --fz--header: 5rem;
+}
+
+nav {
+  /* background-color: rgba(251, 105, 27); */
+  padding: 2em;
+}
+
+.navigationBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  height: 62px; 
+}
+
+.navList ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  gap: 2em;
+  align-items: center;
+}
+
+.navList ul li {
+  position: relative;
+}
+
+.navList ul li a {
+  text-decoration: none;
+  color: var(--color--primary--500);
+  font-size: 1.4rem;
+  font-weight: 300;
+  transition: color 0.3s ease;
+}
+
+.navList ul li a:hover {
+  color: var(--color--primary--300);
+}
+
+/* Dropdown Styles */
+.dropdown .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--color--primary--100);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 0.5em 0;
+  min-width: 150px;
+  z-index: 1000;
+}
+
+.dropdown .dropdown-menu li {
+  margin: 0;
+  padding: 0.5em 1em;
+}
+
+.dropdown .dropdown-menu li a {
+  color: var(--color--primary--500);
+  font-size: 1.2rem;
+}
+
+.dropdown .dropdown-menu li a:hover {
+  color: var(--color--primary--300);
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* SearchBar */
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 400px;
+  width: 100%;
+  border-bottom: 2px solid #ddd; 
+  transition: border-color 0.3s ease;
+}
+
+.searchBar:focus-within {
+  border-color: var(--color--primary--500); 
+}
+
+form, .searchInput {
+  flex: 1;
+  padding: 0.5rem 0;
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+  font-family: var(--ff--primary);
+  color: var(--color--primary--500);
+  background-color: transparent;
+}
+
+.searchInput::placeholder {
+  color: #aaa;
+  font-weight: 300;
+}
+
+.searchButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.searchButton:hover {
+  transform: scale(1.2); 
+  fill: var(--color--primary--300);
+}
+
+.searchButton svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--color--primary--500); 
+
+  transition: fill 0.3s ease;
+}
+
+#logout-modal-overlay {
+ display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0; right: 0; bottom: 0;
+  background: rgba(30, 41, 59, 0.35);
+  justify-content: center;
+  align-items: center;
+}
+
+#logout-modal {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  padding: 2rem 2.5rem;
+  text-align: center;
+  max-width: 340px;
+  width: 90%;
+  animation: fadeInScale .25s;
+}
+#logout-modal h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  color: #222;
+}
+#logout-modal p {
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+#logout-modal .modal-btns {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+#logout-modal .modal-btn {
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background .18s;
+}
+#logout-modal .modal-btn.confirm {
+  background: #ef4444;
+  color: #fff;
+}
+#logout-modal .modal-btn.confirm:hover {
+  background: #dc2626;
+}
+#logout-modal .modal-btn.cancel {
+  background: #f3f4f6;
+  color: #222;
+}
+#logout-modal .modal-btn.cancel:hover {
+  background: #e5e7eb;
+}
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(.95);}
+  to { opacity: 1; transform: scale(1);}
+}

@@ -1,0 +1,130 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: var(--ff--primary);
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+:root {
+  --color--primary--100: #fafafa;
+  --color--primary--200: #c7c6c6;
+  --color--primary--300: rgba(251, 105, 27);
+  --color--primary--500: rgb(22, 22, 22);
+  --color--primary--400: rgb(43, 43, 43);
+
+  --ff--primary: "Poppins", sans-serif;
+  --ff--secondary: ;
+
+  --fz--header: 5rem;
+}
+
+
+.sidebar {
+  display: grid;
+  grid-template-columns: 15% 85%; 
+  height: 100vh;
+}
+
+img{
+  width: 100px;
+  height: 100px;
+  aspect-ratio: 1/1;
+}
+
+aside {
+  background-color: var(--color--primary--500);
+  /* padding: 2.8em; */
+  color: white; 
+
+  /* display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center; */
+
+  .profile{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 4em;
+    margin: 0 0 2em 0;
+
+    background-color: var(--color--primary--400);
+
+    p{
+      text-align: center;
+    }
+  }
+
+  .information{
+    /* display: flex;
+    justify-content: start;
+    align-items: flex-start;
+    flex-direction: column; */
+
+    margin: 2em;
+
+    .info-box{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin: .8em;
+    }
+  }
+}
+
+.right-section {
+  background-color: var(--color--primary--300);
+  padding: 20px;
+
+  /* display: grid; */
+  /* grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));; */
+
+  /* display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: start; */
+
+  .top{
+    background-color: #c7c6c6;
+    padding: 4em;
+    margin: 2em;
+  }
+
+  .listing{
+    display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-gap: 2.8em;
+            grid-auto-rows: 20em;
+
+    color: var(--color--primary--500);
+    padding: 2em;
+
+    .selling-box{
+      /* display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); */
+      background-color: black;
+      border-radius: 24px;
+      padding: em;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      text-align: center;
+    }
+  }
+}

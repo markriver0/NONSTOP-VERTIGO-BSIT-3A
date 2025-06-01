@@ -1,0 +1,19 @@
+php suggestions section query
+submit_feedback.php
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $name = htmlspecialchars($_POST["name"]);
+  $email = htmlspecialchars($_POST["email"]);
+  $message = htmlspecialchars($_POST["message"]);
+
+  // Save to DB or send email
+  // Example:
+  // mail("you@example.com", "New Feedback from $name", $message, "From:$email");
+
+  echo "Thank you for your feedback!";
+}
+?>
+
+
+include './auth/auth.php';
+<p style="color: black;">Welcome, <?php echo htmlspecialchars($fullname); ?>!</p>

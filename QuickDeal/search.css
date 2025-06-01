@@ -1,0 +1,271 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: var(--ff--primary);
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+:root {
+  --color--primary--100: #fafafa;
+  --color--primary--200: rgb(255, 216, 77);
+  --color--primary--300: rgba(251, 105, 27);
+  --color--primary--400: rgb(2, 87, 184);
+  --color--primary--500: #252525;
+
+  --ff--primary: "Poppins", sans-serif;
+  --ff--futura: 'Futura Std', sans-serif;                                                                    
+  --ff--secondary: ;
+
+  --fz--header: 5rem;
+}
+
+/* Dark Mode Variables */
+[data-theme="dark"] {
+  --color--primary--100: #252525; 
+  --color--primary--200: #1a1a1a; 
+  --color--primary--500: #fafafa; 
+  --color--primary--400: rgba(251, 105, 27);
+  --color--primary--200: rgb(2, 87, 184);
+}
+
+
+
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: var(--color--primary--300);
+  color: var(--color--primary--100);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.dark-mode-toggle:hover {
+  background-color: var(--color--primary--500);
+  color: var(--color--primary--100);
+}
+
+
+
+body {
+  background-color: var(--color--primary--100);
+  color: var(--color--primary--100);
+
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+h1{
+  font-family: var(--ff--futura);
+  font-weight: 900;
+  color: var(--color--primary--500);
+}
+
+main{
+  background-color: var(--color--primary--100);
+  width: 90%;
+  margin-inline: auto;
+}
+
+section{
+  margin-bottom: 6em;
+
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+
+
+.offer-img {
+  width: 100%;
+  height: 180px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  display: block;
+
+  overflow: hidden;
+}
+
+
+
+.offer-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  overflow: hidden;
+  padding: 1.2rem;
+  width: 100%;
+  background: var(--color--primary--100);
+  display: flex;
+  flex-direction: column;
+
+}
+
+.new-price {
+  font-size: 1.6rem;
+  color: var(--color--primary--400);
+  font-weight: 700;
+}
+
+.buy-now-btn {
+  margin-top: 1em;
+  padding: 0.5em 1em;
+  background: var(--color--primary--400);
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.3s;
+
+  font-family: var(--ff--primary);
+}
+
+.buy-now-btn:hover {
+  background: var(--color--primary--300);
+}
+
+
+
+.products-section{
+  background-color: var(--color--primary--100);
+  color: var(--color--primary--500);
+
+  .filter-bar {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin: 2rem 0;
+    max-width: 300px;
+  }
+  
+  .filter-bar label {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .filter-bar select {
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #fffefe;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    
+    font-family: var(--ff--primary);
+  }
+
+  
+
+  
+  
+  
+  
+  
+  .product-wrapper{
+    background-color: var(--color--primary--100);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 4fr));
+    grid-auto-rows: 320px;
+    grid-gap: 2em;
+    color: var(--color--primary--500);
+
+
+
+  }    
+  .flex-spacearound{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+    }
+  
+
+  .product-box{
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: var(--color--primary--100);
+  
+    border: 1px solid rgba(157, 157, 157, 0.448);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.151);
+    font-family: var(--ff--primary);
+  }
+}
+
+/* Modern search dropdown styles */
+.search-dropdown {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  border: none;
+  padding: 0.5rem 0;
+  z-index: 1000;
+  display: none;
+  max-height: 320px;
+  overflow-y: auto;
+  transition: box-shadow 0.2s;
+}
+
+.search-dropdown > div {
+  padding: 12px 20px;
+  cursor: pointer;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background 0.15s;
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 1rem;
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.search-dropdown > div:last-child {
+  border-bottom: none;
+}
+
+.search-dropdown > div:hover {
+  background: #f5f7fa;
+  color: #007bff;
+}
+
+.search-dropdown strong {
+  font-weight: 600;
+  color: #222;
+}
+
+.search-dropdown span {
+  font-size: 0.95em;
+  color: #888;
+}
